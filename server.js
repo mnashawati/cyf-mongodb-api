@@ -7,6 +7,9 @@ require("dotenv").config();
 const mongoOptions = { useUnifiedTopology: true };
 
 const uri = process.env.DATABASE_URI;
+if (!uri) {
+  throw "Missing DATABASE_URI env variable";
+}
 
 const client = new mongodb.MongoClient(uri, mongoOptions);
 
