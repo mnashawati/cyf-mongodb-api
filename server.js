@@ -111,7 +111,7 @@ client.connect(function () {
         return response.sendStatus(500);
       }
       // if everything is ok -> send returned record (a bit tricky to find it...)
-      return response.send(result.ops[0]);
+      return response.status(201).send(result.ops[0]);
     });
 
     // response.send("Create a film");
